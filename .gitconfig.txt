@@ -1,0 +1,6 @@
+[gui]
+	recentrepo = C:/inetpub/wwwroot/www.kameda-cci.or.jp/jimdo
+	encoding = utf-8
+[user]
+	name = igachof
+	email = info@siteseeing.jp

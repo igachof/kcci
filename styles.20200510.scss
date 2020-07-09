@@ -1,0 +1,482 @@
+//トップページだけに適用させるCSS
+#page-2704343435 {
+    .j-nav-variant-breadcrumb {
+        display: none;
+    }
+}
+
+body {
+
+    $pc_width: 1000px;
+
+    box-sizing: border-box;
+    table {
+        border-collapse: collapse;
+    }
+
+
+    .container {
+        $sidebar_width : 207px;
+        $sidebar_border: 5px;
+        $content_width : $pc_width - $sidebar_width - $sidebar_border;
+        $hsl_shadow: hsla(0, 0%, 0%, 0.5);
+        $shadow_length: 10px;
+        $shadow_bokashi: $shadow_length / 2;
+        $shadow_spread: $shadow_bokashi / 2 * (-1);
+
+        display: table;
+
+        margin:0 auto;
+        width:$pc_width;
+        background:white;
+        box-shadow: -$shadow_length 0px $shadow_bokashi $shadow_spread $hsl_shadow, $shadow_length 0px $shadow_bokashi $shadow_spread $hsl_shadow;
+
+
+        header {
+            background: url('3x3dotis.svg'), linear-gradient(180deg, hsl(0, 0%, 100%), hsl(0, 0%, 90%));
+            @media all and (-ms-high-contrast: none) { //IE10laterのみ適用
+                #title {
+                    width:300px;
+                }
+            }
+            #title {
+                $h1_size: 30px;
+
+                float: left;
+                margin:20px;
+                #logo_and_title {
+                    display: flex;
+                    img {
+                        height: $h1_size * 1.1;
+                        vertical-align: middle;
+                        margin-top: $h1_size * 0.01;
+                    }
+                    h1 {
+                        a {
+                            font-size:$h1_size;
+                            text-align:center;
+                            color:hsl(0, 0, 10%);
+                            text-decoration: none;
+                        }
+                    }
+                }
+                h2 {
+                    font-size:$h1_size / 3;
+                    text-align:center;
+                    color:hsl(0, 0, 10%);
+                }
+            }
+
+            #addr_and_searchbox {
+                float: right;
+                margin-right: 20px;
+
+                .gsc-control-cse-ja {
+                    background: hsla(0, 0, 100%, 0);
+                    width: 250px;
+                    border: 0;
+
+                    .gsc-search-button-v2 {
+                        @media all and (-ms-high-contrast: none) { //IE10laterのみ適用
+                            padding-bottom: 0px;
+                        }
+                    }
+                }
+
+                address {
+                    $line_weight: 3px;
+                    $line_radius: 5px;
+                    $hue: 30; //色相 オレンジ
+                    $saturation: 100%;
+                    $lettercolor: hsl(0, 0%, 100%);
+    
+                    border: hsl($hue, $saturation, 50%) solid;
+                    border-width: $line_weight $line_weight 0 $line_weight;
+                    border-radius: $line_radius $line_radius 0 0;
+                    background: linear-gradient(180deg, hsl($hue, $saturation, 30%) ,hsl($hue, $saturation, 20%));
+                    padding: 10px;
+                    margin-left:auto;
+                    width:180px;
+                    #phoneandtime {
+                        font-weight: bold;
+                        font-style: normal;
+                        #logonum {
+                            $basesize:20px;
+                            display: flex;
+                            margin: $basesize * 0.1;
+                            #tellogo {
+                                img {
+                                    height: $basesize * 1.1;
+                                }
+                            }
+                            #telnum {
+                                a {
+                                    text-decoration: none;
+                                    color: $lettercolor;
+                                    font-family: "Midashi Go MB31", sans-serif, "typesquare";
+                                    font-size:$basesize;
+                                    vertical-align: middle;
+                                }
+                            }
+                        }
+                        #sertime {
+                            font-family: "Shin Go Regular", sans-serif, "typesquare";
+                            color: $lettercolor;
+                            font-size:10px;
+                            text-align:center;
+                        }
+    
+                    }
+                    #howtoaccess {
+                        float: right;
+                        text-align: center;
+                        img {
+                            width: 5em;
+                        }
+                    }
+    
+                    &:after {
+                        clear:both;
+                    }
+                }
+    
+            }
+
+                
+        }
+        #sidebar {
+            display: table-cell;
+            width:$sidebar_width + $sidebar_border;
+            padding: 0;
+            background: linear-gradient(90deg, hsl(120, 81%, 22%), hsl(120, 92%, 15%));
+            border-right: $sidebar_border solid hsl(118, 94%, 31%);
+            vertical-align: top;
+            img {
+                width: $sidebar_width;
+            }
+        }
+        #content {
+            display: table-cell;
+            width:$content_width;
+            padding: 10px;
+            vertical-align: top;
+
+            @mixin premark($fas, $color) {
+                font-family: "Font Awesome 5 Free";
+                content: $fas;
+              
+                -webkit-font-smoothing: antialiased;
+                display: inline-block;
+                font-style: normal;
+                font-variant: normal;
+                text-rendering: auto;
+                line-height: 1;
+                color: $color;
+
+            }
+            @media all and (-ms-high-contrast: none) { //IE10laterのみ適用
+                .j-nav-variant-breadcrumb {
+                    margin-left:-30px;
+                }
+            }
+
+            .j-nav-variant-breadcrumb {
+                ol {
+                    list-style: none;
+                    padding-inline-start: 0px;
+                    li {
+                        display: inline;
+                        &:not(:first-of-type) {
+                            &:before {
+                                content: ' > ';
+                                font-weight: bold;
+                            }
+                        }
+                    }
+                }
+            }
+
+            h1 {
+                position: relative;
+                $base_hue: 200;
+                $base_saturation: 0%; //100%;
+
+                background:  linear-gradient(0deg, hsl($base_hue, $base_saturation, 90%), hsl($base_hue, $base_saturation, 100%));
+                border:1px solid hsl($base_hue, $base_saturation, 50%);
+                border-radius: 0.3em;
+                $padding_base: 0.2em;
+                padding: $padding_base $padding_base $padding_base ($padding_base + 0.6em);
+                &:after {
+                    position: absolute;
+                    top: $padding_base;
+                    left: 0.3em;
+                    content:'';
+                    width: 0.2em;
+                    height: 1.3em;
+                    background-color: blue;
+                }
+            }
+
+            h2 {
+                //&:before {
+                //    @include premark("\f101", "hsl(0, 100%, 50%)");
+                //    color: red; // なぜか色が変わらないので暫定的に
+                //}
+                border-left: 0.2em solid hsl(200, 100%, 70%);
+                border-bottom: 1px solid hsl(0, 0%, 50%);
+                padding-left: 0.4em;
+            }
+
+            h3 {
+                //&:before {
+                //    @include premark("\f105", "hsl(0, 100%, 50%)");
+                //    color: red; // なぜか色が変わらないので暫定的に
+                //}
+                border-bottom: 1px solid hsl(0, 0%, 50%);
+            }
+
+
+
+
+            .cc-m-download-file-name, .cc-m-download-file-info {
+                display: none;
+            }
+            .cc-m-download-file-link {
+                text-align:right;
+                height: 3em;
+                a {
+                    display:inline-block;
+                    text-decoration: none;
+                    color:hsl(0, 0%, 30%);
+                    font-weight: bold;
+                    margin-right:0.5em;
+                    padding: 0.5em 1em;
+                    border-radius: 0.5em;
+                    border: 1px solid hsl(0, 0%, 70%);
+                    background: linear-gradient(180deg, hsl(0, 0%, 100%), hsl(0, 0%, 90%));
+                    &:before {
+                        content: '';/*何も入れない*/
+                        display: inline-block;/*忘れずに！*/
+                        width: 1.2em;/*画像の幅*/
+                        height: 1.2em;/*画像の高さ*/
+                        background-image: url(download-icon.svg);
+                        background-size: contain;
+                        vertical-align: middle;
+                        margin-right: 0.5em;
+                    }
+                }
+        
+            }
+            
+            .whatsnew_eyecatch {
+                background:hsl(204, 100%, 50%);
+                padding:2px;
+                border-radius: 5px;
+            }
+    
+
+        }
+
+
+    }
+
+    #navbar_container {
+        $hue: 0; //色相 赤
+        $saturation: 100%;
+        $mojisize: 18px;
+        $hrefpadding: 10px;
+        $navbarborder: 2px;
+        background: linear-gradient(180deg, hsl($hue, $saturation, 18%), hsl($hue, $saturation, 4%));
+        font-size: $mojisize;
+        $bcolor:  $navbarborder solid hsl($hue, 89%, 38%);
+        border-top: $bcolor;
+        border-bottom: $bcolor;
+
+        nav {
+
+            .cc-nav-level-0 {
+                
+                position: relative;
+                width: $pc_width;
+                list-style: none;
+                margin: 0 auto;
+                padding-inline-start:0px;
+
+                & > li {
+                    position: relative;
+                    float: left;
+                    border-left: 1px dotted hsla(0, 0%, 100%, 0.3);
+
+                    &:first-child {
+                        border-left: none;
+                    }
+
+                    a {
+                        display: block;
+                        padding: $hrefpadding 25px;
+                        color: white;
+                        text-decoration: none;
+                        font-weight: bolder;
+
+                        &:hover {
+                            background: white;
+                            color: black;
+                        }
+
+                        &.current {
+                            font-weight:bold;
+                            color: blue;
+                        }
+
+                        span {
+                            display: block;
+                            margin: 0 auto;
+                        }
+
+                    }
+
+    
+                    .cc-nav-level-1 {
+                        // ドロップダウンメニュー背景色
+                        $ddmenu_saturation: 100%; //彩度
+                        $ddmenu_lightness: 42%; //輝度
+                        $ddmenu_alpha: 0.7; //透明度
+
+                        visibility: hidden;
+                        opacity: 0;
+                        z-index: 1;
+
+                        position: absolute;
+                        margin: 0;
+                        padding: 0;
+                        top: $mojisize + $hrefpadding * 2 + $navbarborder;
+                        left:0px;
+                        background: hsla(219, $ddmenu_saturation, $ddmenu_lightness, $ddmenu_alpha);
+                        -webkit-transition: all .2s ease;
+                        transition: all .2s ease;
+                        font-size: $mojisize * 0.8;
+                        padding-inline-start:0px;
+                        width: 100%;
+                        list-style: none;
+
+                            a {
+                                padding:4px 4px 4px 14px;
+                                border-bottom: 1px dotted hsla(0, 0%, 100%, 0.3);
+                                &:hover {
+                                    background: hsla(0,  $ddmenu_saturation, $ddmenu_lightness, $ddmenu_alpha);
+                                }
+                            }
+
+                            .cc-nav-level-2 {
+                                background: hsla(170, $ddmenu_saturation, $ddmenu_lightness, $ddmenu_alpha);
+                                margin: 0;
+                                padding: 0;
+                                list-style: none;
+                                padding-inline-start: 0;
+                                a {
+                                    font-weight: normal;
+                                    font-size: $mojisize * 0.6;
+                                    &:before {
+                                        content: '└ ';
+                                    }
+                                }
+                            }
+                    }
+
+                    &:hover .cc-nav-level-1 {
+                        visibility: visible;
+                        opacity: 1;
+                    }
+
+
+                }
+            
+                &:before , &:after {
+                    content: '';
+                    display: table;
+                    clear: both;
+                }
+
+            }
+        }
+    }
+    footer {
+        $hue: 230; //色相
+        $saturation: 10%;
+        $mojiiro: white;
+        $mojifutosa: bold;
+        border-top: 3px solid hsl($hue, $saturation, 60%);
+        background: linear-gradient(180deg, hsl($hue, $saturation, 40%), hsl($hue, $saturation, 25%));
+        padding:0 15px 3px 0;
+
+        %lettercss {
+            color: white;
+            font-weight: bold;
+        }
+    
+        & > div {
+            width:$pc_width * 0.95;
+            margin:0 auto;
+
+
+            .leftrow, .rightrow {
+                @extend %lettercss;
+                width: 40%;
+                a {
+                    @extend %lettercss;
+                    text-decoration: none;
+                }
+            }
+            #footer_address {
+                @extend %lettercss;
+                border: 1px solid hsla(0, 100%, 100%, 0.2);
+                border-radius: 3px;
+                background-color: hsla(0, 100%, 100%, 0.1);
+                margin: 20px 0 20px 0;
+                padding:7px;
+                display: inline-block;
+
+                #logo_left {
+                    float: left;
+                    margin-right: 10px;
+                    img {
+                        height:90px;
+                    }
+                }
+
+                #addr_right {
+                    float: right;
+                    //font-size:0.8em;
+
+                    h1 {
+                        color: white;
+                        font-size: 1.5em;
+                    }
+    
+                    address {
+                        font-style: normal;
+                        a {
+                            @extend %lettercss;
+                            text-decoration: none;
+                        }
+                    }
+                }                
+
+                &:after {
+                    clear: both;
+                }
+            }
+
+        }
+    
+    }
+    
+
+
+}
+
+
+
+
+
+
