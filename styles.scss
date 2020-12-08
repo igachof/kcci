@@ -283,7 +283,7 @@ body {
     #navbar_container {
         $hue: 0; //色相 赤
         $saturation: 100%;
-        $mojisize: 18px;
+        $mojisize: 16px;
         $hrefpadding: 10px;
         $navbarborder: 2px;
         background: linear-gradient(180deg, hsl($hue, $saturation, 18%), hsl($hue, $saturation, 4%));
@@ -316,7 +316,7 @@ body {
 
                     a {
                         display: block;
-                        padding: $hrefpadding 25px;
+                        padding: $hrefpadding 10px;
                         color: white;
                         text-decoration: none;
                         font-weight: bolder;
@@ -361,7 +361,7 @@ body {
                         top: $mojisize + $hrefpadding * 2 + $navbarborder;
                         left: 0px;
                         //background: hsla(219, $ddmenu_saturation, $ddmenu_lightness, $ddmenu_alpha);
-                        font-size: $mojisize * 0.8;
+                        font-size: $mojisize * 0.7;
                         padding-inline-start:0px;
                         width: 100%;
                         list-style: none;
@@ -395,6 +395,7 @@ body {
 
                                 li {
                                     background: hsla(190, $ddmenu_saturation, $ddmenu_lightness, $ddmenu_alpha);
+                                    width: 150%;
                                     a {
                                         font-weight: normal;
                                         font-size: $mojisize * 0.6;
